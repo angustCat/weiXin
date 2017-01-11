@@ -1,0 +1,15 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "red",
+    "navigationBarTitleText": "白色不得姐",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh":"true",
+    "backgroundColor": "orange"
+
+  }
+}

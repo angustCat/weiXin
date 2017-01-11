@@ -1,0 +1,43 @@
+<!--index.wxml-->
+<view>
+    <view class="header">
+        <!--<text class="{{ now == 0 ? 'active' : '' }}" bindtap="changeNav" data-index="0">图片</text>
+        <text class="{{ now == 1 ? 'active' : '' }}" bindtap="changeNav"  data-index="1">段子</text>
+        <text class="{{ now == 2 ? 'active' : '' }}" bindtap="changeNav"  data-index="2">视频</text>-->
+
+        <text wx:for="{{arr}}" class="{{ now == index ? 'active' : '' }}" bindtap="changeNav"  data-index="{{index}}">{{item.name}}</text>
+    </view>
+
+    <!--图片-->
+    <view class="container" wx:if="{{ now == 0}}">
+        <view wx:for="{{imgList}}" class="red">
+            作者：{{ item.name }}
+            日期：{{ item.create_time }}
+            <text>{{item.text}}</text>
+            <image src="{{item.image0}}" bindtap="preview" data-img="{{item.image0}}"></image>
+        </view>
+    </view>
+
+      <!--段子-->
+    <view class="container" wx:if="{{ now == 1}}">
+        <view wx:for="{{duanZi}}" class="red">
+            作者：{{ item.name }}
+            日期：{{ item.create_time }}
+            <text>{{item.text}}</text>
+        </view>
+    </view>
+    
+
+
+    <!--视频-->
+    <view class="container" wx:if="{{ now == 2 }}">
+        <view wx:for="{{vidwoList}}" class="red">
+            作者：{{ item.name }}
+            日期：{{ item.create_time }}
+            <text>{{item.text}}</text>
+            <video src="{{item.video_uri}}" controls="true"></video>
+        </view>
+    </view>
+    
+    
+</view>
